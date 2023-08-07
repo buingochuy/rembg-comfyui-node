@@ -1,4 +1,3 @@
-from rembg import remove
 from PIL import Image
 import torch
 import numpy as np
@@ -28,6 +27,8 @@ class ImageRemoveBackgroundRembg:
     CATEGORY = "image"
 
     def remove_background(self, image):
+        from rembg import remove
+        
         image = pil2tensor(remove(tensor2pil(image)))
         return (image,)
 
